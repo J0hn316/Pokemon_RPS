@@ -2,36 +2,134 @@
   box-sizing: border-box;
 }
 
-/* nav {
+#top-menu {
+  z-index: 20;
+}
+
+#sub-menu {
+  width: 100%;
+  z-index: 10;
+  transition: top 0.5s ease-out;
+}
+
+header,
+#top-menu {
+  position: relative;
+}
+
+nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   background-color: rgb(57, 73, 57);
   height: 50px;
+}
+
+/* body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
 } */
 
 body {
+  font-family: Tahoma, Geneva, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 3rem auto;
+  color: white;
+}
+
+.stadium {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  background-color: #4caf50;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/* .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.pokeball {
+  width: 200px;
+  height: 200px;
   background-color: gray;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#top-menu {
-  z-index: 20;
-}
-
-/* #fire {
+/* .top-half {
+  width: 120px;
+  height: 120px;
   background-color: red;
-  font-size: 20px;
-  margin: 10px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+} */
+
+img {
+  height: 100%;
 }
 
-#water {
-  background-color: blue;
-  font-size: 20px;
-  margin: 10px;
-}
+/* .center {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+} */
 
-#grass {
+/* .versus {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+} */
+
+/* 
+#top-menu a:hover {
   background-color: green;
-  font-size: 20px;
-  margin: 10px; */
-/* } */
+} */
+
+/* #sub-menu a:hover {
+  background-color: var(--top-menu-bg);
+} */
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Link from reddit user WaveofHope34 */
+  /* background-image: url("/images/Galar.png"); */
+}
+
+nav a {
+  line-height: 3rem;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+/* nav a.active {
+  background-color: rgba(174, 255, 0, 0.575);
+  color: rgba(76, 113, 123, 0.354);
+} */

@@ -78,6 +78,16 @@ nav a {
   }
 }
 
+#play {
+  position: absolute;
+  top: 200px;
+}
+
+#playagain {
+  position: absolute;
+  bottom: 200px;
+}
+
 .ComputerPokemon {
   position: absolute;
   height: 200px;

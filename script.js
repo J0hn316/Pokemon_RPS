@@ -4,6 +4,21 @@ let computerPokemon = null;
 const playerPokemonImg = document.querySelector(".PlayerPokemon");
 const computerPokemonImg = document.querySelector(".ComputerPokemon");
 const gameStart = document.querySelector(".container");
+const play = document.getElementById("play");
+
+let startGame = false;
+
+const winsEl = document.getElementById("Wins");
+const lossesEl = document.getElementById("Losses");
+const drawsEl = document.getElementById("Draws");
+
+const music = [
+  { name: "SBM", src: "/audio/GLB.mp3" },
+  { name: "EBM", src: "/audio/GLBV.mp3" },
+  { name: "PS", src: "/audio/pokeball_sound_effects_mp3cut_1.mp3" },
+];
+
+let song = new Audio();
 
 const pokemonList = [
   { name: "Charizard", type: "fire", srcPath: "/images/charizard.png" },
@@ -142,12 +157,18 @@ subMenu.addEventListener("click", (evt) => {
   playerPokemonImg.classList.remove("pokemonball1");
   computerPokemonImg.classList.remove("pokemonball");
 
+  playSound("PS");
+
   gameStart.classList.add("start");
 
   setTimeout(() => {
     gameStart.classList.remove("start");
+    playMusic("EBM");
     battle();
+    playAgain.style.display = "none";
   }, 1250);
+
+  startGame = true;
 
   showingSubMenu = false;
   subMenu.style.top = "0";
@@ -158,9 +179,6 @@ subMenu.addEventListener("click", (evt) => {
 let wins = 0;
 let losses = 0;
 let draws = 0;
-
-// const delay = setTimeout(battle, 5000);
-// clearTimeout(delay);
 
 function battle() {
   if (computerPokemon.type === playerPokemon.type) {
@@ -180,5 +198,44 @@ function battle() {
     console.log("You Lose");
     losses++;
   }
-  console.log("Wins:", wins, "Losses:", losses, "Draws:", draws);
+  winsEl.textContent = "Wins" + " " + wins;
+  lossesEl.textContent = "Losses" + " " + losses;
+  drawsEl.textContent = "Draws" + " " + draws;
 }
+
+play.addEventListener("click", () => {
+  playMusic("SBM");
+  playerPokemonImg.classList.add("pokemonball1");
+  computerPokemonImg.classList.add("pokemonball");
+  play.style.display = "none";
+});
+
+// function playAgain() {
+//   playMusic("stop");
+// }
+
+function playMusic(name) {
+  if (name === "SBM") {
+    song.src = music[0].src;
+    song.volume = 0.3;
+    song.play();
+  } else if (name === "EBM") {
+    song.src = music[1].src;
+    song.volume = 0.3;
+    song.play();
+  } else if (name === "stop") {
+    song.pause();
+  }
+}
+
+function playSound(name) {
+  if (name === "PS") {
+    let clip = new Audio("/audio/pokeball_sound_effects_mp3cut_1.mp3");
+    clip.volume = 0.2;
+    clip.play();
+  }
+}
+
+// function playAgain(){
+
+// }

@@ -25,15 +25,6 @@ nav {
   height: 50px;
 }
 
-/* body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
-} */
-
 body {
   font-family: Tahoma, Geneva, sans-serif;
   height: 100vh;
@@ -43,82 +34,27 @@ body {
   color: white;
 }
 
-.stadium {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  background-color: #4caf50;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-/* .field {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-.pokeball {
-  width: 200px;
-  height: 200px;
-  background-color: gray;
-  border-radius: 50%;
-  position: relative;
-  border: 2px solid black;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .top-half {
-  width: 120px;
-  height: 120px;
-  background-color: red;
-  border-radius: 50%;
+.versus {
   position: absolute;
-  z-index: 2;
-} */
-
-img {
-  height: 100%;
-}
-
-/* .center {
-  width: 40px;
-  height: 40px;
-  background-color: black;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-} */
-
-/* .versus {
   font-size: 24px;
   font-weight: bold;
   color: white;
+  text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-} */
+}
 
-/* 
-#top-menu a:hover {
-  background-color: green;
-} */
-
-/* #sub-menu a:hover {
-  background-color: var(--top-menu-bg);
-} */
+#stadium {
+  position: absolute;
+  height: 950px;
+  z-index: -1;
+}
 
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Link from reddit user WaveofHope34 */
-  /* background-image: url("/images/Galar.png"); */
+  overflow: hidden;
+  position: relative;
 }
 
 nav a {
@@ -129,7 +65,37 @@ nav a {
   color: white;
 }
 
-/* nav a.active {
-  background-color: rgba(174, 255, 0, 0.575);
-  color: rgba(76, 113, 123, 0.354);
-} */
+.PlayerPokemon {
+  position: absolute;
+  height: 200px;
+  top: 30%;
+  left: 30%;
+  transform-origin: right left;
+}
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.ComputerPokemon {
+  position: absolute;
+  height: 200px;
+  top: 30%;
+  right: 30%;
+  transform-origin: right left;
+}
+
+.pokemonball {
+  animation: computerShake 0.7s ease infinite;
+}
+
+.pokemonball1 {
+  animation: userShake 0.7s ease infinite;
+}
+
+@keyframes computerShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}

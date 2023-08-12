@@ -85,6 +85,7 @@ nav a {
 
 #playagain {
   position: absolute;
+  visibility: hidden;
   bottom: 200px;
 }
 

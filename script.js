@@ -5,9 +5,7 @@ const playerPokemonImg = document.querySelector(".PlayerPokemon");
 const computerPokemonImg = document.querySelector(".ComputerPokemon");
 const gameStart = document.querySelector(".container");
 const play = document.getElementById("play");
-
-let startGame = false;
-
+const playAgain = document.getElementById("playagain");
 const winsEl = document.getElementById("Wins");
 const lossesEl = document.getElementById("Losses");
 const drawsEl = document.getElementById("Draws");
@@ -147,7 +145,7 @@ subMenu.addEventListener("click", (evt) => {
     }
   }
 
-  // Code to display pokemon
+  // Code to that decides what pokemon CPU selects
 
   const pcSelectedPokemon = Math.floor(Math.random() * pokemonList.length);
   computerPokemon = pokemonList[pcSelectedPokemon];
@@ -165,10 +163,9 @@ subMenu.addEventListener("click", (evt) => {
     gameStart.classList.remove("start");
     playMusic("EBM");
     battle();
-    playAgain.style.display = "none";
   }, 1250);
 
-  startGame = true;
+  playAgain.style.visibility = "visible";
 
   showingSubMenu = false;
   subMenu.style.top = "0";
@@ -198,9 +195,9 @@ function battle() {
     console.log("You Lose");
     losses++;
   }
-  winsEl.textContent = "Wins" + " " + wins;
-  lossesEl.textContent = "Losses" + " " + losses;
-  drawsEl.textContent = "Draws" + " " + draws;
+  winsEl.textContent = "Wins:" + " " + wins;
+  lossesEl.textContent = "Losses:" + " " + losses;
+  drawsEl.textContent = "Draws:" + " " + draws;
 }
 
 play.addEventListener("click", () => {
@@ -210,9 +207,10 @@ play.addEventListener("click", () => {
   play.style.display = "none";
 });
 
-// function playAgain() {
-//   playMusic("stop");
-// }
+playAgain.addEventListener("click", () => {
+  playAgain.style.visibility = "hidden";
+  location.reload();
+});
 
 function playMusic(name) {
   if (name === "SBM") {
@@ -235,7 +233,3 @@ function playSound(name) {
     clip.play();
   }
 }
-
-// function playAgain(){
-
-// }

@@ -14,7 +14,10 @@ const music = [
   { name: "SBM", src: "/audio/GLB.mp3" },
   { name: "EBM", src: "/audio/GLBV.mp3" },
   { name: "PS", src: "/audio/pokeball_sound_effects_mp3cut_1.mp3" },
+  { name: "lose", src: "/audio/lose.wav" },
 ];
+
+// Music came from KHInsider using website https://downloads.khinsider.com/game-soundtracks/album/pokemon-red-green-blue-yellow and https://mixkit.co/free-sound-effects/lose/
 
 let song = new Audio();
 
@@ -29,6 +32,8 @@ const pokemonList = [
   { name: "Swampert", type: "water", srcPath: "/images/swampert.png" },
   { name: "Sceptile", type: "grass", srcPath: "/images/sceptile.png" },
 ];
+
+// All images came from https://www.pngegg.com/ and Thanks to Arnaldo Pires
 
 // Top Menu and Sub Menu code
 
@@ -161,9 +166,9 @@ subMenu.addEventListener("click", (evt) => {
 
   setTimeout(() => {
     gameStart.classList.remove("start");
-    playMusic("EBM");
+    // playMusic("EBM");
     battle();
-  }, 1250);
+  }, 2500);
 
   playAgain.style.visibility = "visible";
 
@@ -188,10 +193,12 @@ function battle() {
     (playerPokemon.type === "grass" && computerPokemon.type === "water")
   ) {
     alert("Winner");
+    playMusic("EBM");
     console.log("Winner");
     wins++;
   } else {
     alert("You lose");
+    playMusic("lose");
     console.log("You Lose");
     losses++;
   }
@@ -221,8 +228,10 @@ function playMusic(name) {
     song.src = music[1].src;
     song.volume = 0.3;
     song.play();
-  } else if (name === "stop") {
-    song.pause();
+  } else if (name === "lose") {
+    song.src = music[3].src;
+    song.volume = 0.3;
+    song.play();
   }
 }
 

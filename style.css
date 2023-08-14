@@ -93,7 +93,7 @@ nav a {
   position: absolute;
   height: 200px;
   top: 30%;
-  right: 30%;
+  right: 29%;
   transform-origin: right left;
 }
 
@@ -110,3 +110,5 @@ nav a {
     transform: rotate(-10deg);
   }
 }
+
+/* the idea of using ease infinite and @keyframes came from By CodingNepal https://www.codingnepalweb.com/rock-paper-scissors-game-javascript/ */

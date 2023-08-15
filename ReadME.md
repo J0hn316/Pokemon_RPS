@@ -1,5 +1,5 @@
 ## Rock Paper Scissors/ Project 1
-
+Link to game https://j0hn316.github.io/Pokemon_RPS/
 This game is one of three projects in the Web Development course for the PerScholas Boot Camp.
 My version of Rock Paper Scissors game is call Pokemon RPS
 

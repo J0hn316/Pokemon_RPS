@@ -17,8 +17,6 @@ const music = [
   { name: "lose", src: "/audio/lose.wav" },
 ];
 
-// Music came from KHInsider using website https://downloads.khinsider.com/game-soundtracks/album/pokemon-red-green-blue-yellow and https://mixkit.co/free-sound-effects/lose/
-
 let song = new Audio();
 
 const pokemonList = [
@@ -32,10 +30,6 @@ const pokemonList = [
   { name: "Swampert", type: "water", srcPath: "/images/swampert.png" },
   { name: "Sceptile", type: "grass", srcPath: "/images/sceptile.png" },
 ];
-
-// All images came from https://www.pngegg.com/ and Thanks to Arnaldo Pires
-
-// Top Menu and Sub Menu code
 
 const topMenu = document.querySelector("#top-menu");
 
@@ -150,8 +144,6 @@ subMenu.addEventListener("click", (evt) => {
     }
   }
 
-  // Code to that decides what pokemon CPU selects
-
   const pcSelectedPokemon = Math.floor(Math.random() * pokemonList.length);
   computerPokemon = pokemonList[pcSelectedPokemon];
 
@@ -166,7 +158,6 @@ subMenu.addEventListener("click", (evt) => {
 
   setTimeout(() => {
     gameStart.classList.remove("start");
-    // playMusic("EBM");
     battle();
   }, 2500);
 
@@ -175,8 +166,6 @@ subMenu.addEventListener("click", (evt) => {
   showingSubMenu = false;
   subMenu.style.top = "0";
 });
-
-// Code for RPS
 
 let wins = 0;
 let losses = 0;
@@ -187,6 +176,7 @@ function battle() {
     alert("Its a tie");
     console.log(`It's a tie!`);
     draws++;
+    playMusic("");
   } else if (
     (playerPokemon.type === "fire" && computerPokemon.type === "grass") ||
     (playerPokemon.type === "water" && computerPokemon.type === "fire") ||
@@ -232,6 +222,8 @@ function playMusic(name) {
     song.src = music[3].src;
     song.volume = 0.3;
     song.play();
+  } else {
+    song.pause();
   }
 }
 

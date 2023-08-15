@@ -11,24 +11,24 @@ const lossesEl = document.getElementById("Losses");
 const drawsEl = document.getElementById("Draws");
 
 const music = [
-  { name: "SBM", src: "/audio/GLB.mp3" },
-  { name: "EBM", src: "/audio/GLBV.mp3" },
-  { name: "PS", src: "/audio/pokeball_sound_effects_mp3cut_1.mp3" },
-  { name: "lose", src: "/audio/lose.wav" },
+  { name: "SBM", src: "audio/GLB.mp3" },
+  { name: "EBM", src: "audio/GLBV.mp3" },
+  { name: "PS", src: "audio/pokeball_sound_effects_mp3cut_1.mp3" },
+  { name: "lose", src: "audio/lose.wav" },
 ];
 
 let song = new Audio();
 
 const pokemonList = [
-  { name: "Charizard", type: "fire", srcPath: "/images/charizard.png" },
-  { name: "Blastoise", type: "water", srcPath: "/images/blastoise.png" },
-  { name: "Venusaur", type: "grass", srcPath: "/images/venusaur.png" },
-  { name: "Typhlosion", type: "fire", srcPath: "/images/typhlosion.png" },
-  { name: "Feraligatr", type: "water", srcPath: "/images/feraligatr.png" },
-  { name: "Meganium", type: "grass", srcPath: "/images/meganium.png" },
-  { name: "Blaziken", type: "fire", srcPath: "/images/blaziken.png" },
-  { name: "Swampert", type: "water", srcPath: "/images/swampert.png" },
-  { name: "Sceptile", type: "grass", srcPath: "/images/sceptile.png" },
+  { name: "Charizard", type: "fire", srcPath: "images/charizard.png" },
+  { name: "Blastoise", type: "water", srcPath: "images/blastoise.png" },
+  { name: "Venusaur", type: "grass", srcPath: "images/venusaur.png" },
+  { name: "Typhlosion", type: "fire", srcPath: "images/typhlosion.png" },
+  { name: "Feraligatr", type: "water", srcPath: "images/feraligatr.png" },
+  { name: "Meganium", type: "grass", srcPath: "images/meganium.png" },
+  { name: "Blaziken", type: "fire", srcPath: "images/blaziken.png" },
+  { name: "Swampert", type: "water", srcPath: "images/swampert.png" },
+  { name: "Sceptile", type: "grass", srcPath: "images/sceptile.png" },
 ];
 
 const topMenu = document.querySelector("#top-menu");
@@ -229,7 +229,7 @@ function playMusic(name) {
 
 function playSound(name) {
   if (name === "PS") {
-    let clip = new Audio("/audio/pokeball_sound_effects_mp3cut_1.mp3");
+    let clip = new Audio("audio/pokeball_sound_effects_mp3cut_1.mp3");
     clip.volume = 0.2;
     clip.play();
   }

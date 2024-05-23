@@ -83,7 +83,7 @@ nav a {
   top: 200px;
 }
 
-#playagain {
+#play-again {
   position: absolute;
   visibility: hidden;
   bottom: 200px;
@@ -97,11 +97,11 @@ nav a {
   transform-origin: right left;
 }
 
-.pokemonball {
+.pokemon-ball {
   animation: computerShake 0.7s ease infinite;
 }
 
-.pokemonball1 {
+.pokemon-ball1 {
   animation: userShake 0.7s ease infinite;
 }
 
